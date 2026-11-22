@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-ink text-fg font-sans antialiased;
+}
+
+/* Faint dot-grid, like graph paper for building things */
+.dotgrid {
+  background-image: radial-gradient(rgba(53, 224, 196, 0.14) 1px, transparent 1px);
+  background-size: 22px 22px;
+  background-position: -11px -11px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-rise,
+  .animate-glow {
+    animation: none !important;
+  }
+}
+
+/* Accessible focus ring */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #35e0c4;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
